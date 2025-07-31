@@ -487,6 +487,14 @@ section h2 {
     background-repeat: no-repeat;
 }
 
+/* Klimaat specific hero */
+.klimaat-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/play-de-la-fustera-600x400.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
 /* Location overview section */
 .location-overview {
     padding: 4rem 0;
