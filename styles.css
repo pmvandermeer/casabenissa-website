@@ -28,6 +28,10 @@ body {
     z-index: 1000;
 }
 
+.nav {
+    background: transparent !important;
+}
+
 .nav-container {
     display: flex;
     justify-content: space-between;
@@ -35,7 +39,7 @@ body {
     padding: 1rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
-    background: none;
+    background: transparent !important;
 }
 
 .logo {
@@ -52,7 +56,7 @@ body {
     display: flex;
     list-style: none;
     gap: 2rem;
-    background: none;
+    background: transparent !important;
 }
 
 .nav-link {
