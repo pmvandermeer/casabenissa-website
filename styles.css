@@ -50,7 +50,7 @@ body {
 }
 
 .logo h1 {
-    color: #d4e8cc;
+    color: #2d5a27;
     font-size: 1.5rem;
     font-weight: 700;
 }
@@ -70,7 +70,7 @@ body {
 }
 
 .nav-link:hover {
-    color: #d4e8cc;
+    color: #2d5a27;
 }
 
 .nav-link::after {
@@ -80,7 +80,7 @@ body {
     height: 2px;
     bottom: -5px;
     left: 0;
-    background-color: #d4e8cc;
+    background-color: #2d5a27;
     transition: width 0.3s ease;
 }
 
@@ -152,7 +152,7 @@ body {
 
 .cta-button {
     background: white;
-    color: #d4e8cc;
+    color: #2d5a27;
     border: none;
     padding: 1rem 2rem;
     font-size: 1.1rem;
@@ -219,7 +219,7 @@ section h2 {
 
 .stat h3 {
     font-size: 2.5rem;
-    color: #d4e8cc;
+    color: #2d5a27;
     margin-bottom: 0.5rem;
 }
 
@@ -304,7 +304,7 @@ section h2 {
 .feature h4 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
-    color: #d4e8cc;
+    color: #2d5a27;
 }
 
 .feature p {
@@ -418,12 +418,12 @@ section h2 {
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
-    border-color: #d4e8cc;
+    border-color: #2d5a27;
 }
 
 .submit-button {
-    background: #d4e8cc;
-    color: #333;
+    background: #2d5a27;
+    color: white;
     border: none;
     padding: 1rem 2rem;
     font-size: 1.1rem;
@@ -434,7 +434,7 @@ section h2 {
 }
 
 .submit-button:hover {
-    background: #c0d8b8;
+    background: #1e3f1a;
     transform: translateY(-2px);
 }
 
