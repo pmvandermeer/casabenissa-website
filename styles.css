@@ -69,7 +69,7 @@ body {
 }
 
 .nav-link:hover {
-    color: #4a7c59;
+    color: #669897;
 }
 
 .nav-link::after {
@@ -79,7 +79,7 @@ body {
     height: 2px;
     bottom: -5px;
     left: 0;
-    background-color: #4a7c59;
+    background-color: #669897;
     transition: width 0.3s ease;
 }
 
@@ -152,8 +152,8 @@ body {
 }
 
 .cta-button {
-    background: white;
-    color: #4a7c59;
+    background: #669897;
+    color: white;
     border: none;
     padding: 1rem 2rem;
     font-size: 1.1rem;
@@ -178,7 +178,7 @@ section h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: #1f2937;
+    color: #669897;
 }
 
 /* Over ons sectie */
@@ -220,7 +220,7 @@ section h2 {
 
 .stat h3 {
     font-size: 2.5rem;
-    color: #4a7c59;
+    color: #669897;
     margin-bottom: 0.5rem;
 }
 
@@ -280,7 +280,7 @@ section h2 {
 .location-info h3 {
     font-size: 2rem;
     margin-bottom: 2rem;
-    color: #1f2937;
+    color: #669897;
     text-align: center;
 }
 
@@ -305,7 +305,7 @@ section h2 {
 .feature h4 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
-    color: #4a7c59;
+    color: #669897;
 }
 
 .feature p {
@@ -388,7 +388,7 @@ section h2 {
 .contact-info h3 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    color: #1f2937;
+    color: #669897;
 }
 
 .contact-info p {
@@ -419,11 +419,11 @@ section h2 {
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
-    border-color: #4a7c59;
+    border-color: #669897;
 }
 
 .submit-button {
-    background: #4a7c59;
+    background: #669897;
     color: white;
     border: none;
     padding: 1rem 2rem;
@@ -435,7 +435,7 @@ section h2 {
 }
 
 .submit-button:hover {
-    background: #3d6a4a;
+    background: #5a8a89;
     transform: translateY(-2px);
 }
 
