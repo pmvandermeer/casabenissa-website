@@ -451,6 +451,82 @@ section h2 {
     font-weight: 600;
 }
 
+/* Page hero section */
+.page-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/Trainingslocatie-Spanje.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 8rem 0 4rem;
+    text-align: center;
+    color: white;
+    margin-top: 80px;
+}
+
+.page-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.page-hero p {
+    font-size: 1.2rem;
+    opacity: 0.95;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Location overview section */
+.location-overview {
+    padding: 4rem 0;
+    background: white;
+}
+
+/* Location pages grid */
+.location-pages {
+    padding: 4rem 0;
+    background: #f8fafc;
+}
+
+.location-pages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.location-page-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.location-page-card:hover {
+    transform: translateY(-5px);
+}
+
+.location-page-card h3 {
+    color: #669897;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.location-page-card h3 a {
+    color: #669897;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.location-page-card h3 a:hover {
+    color: #4a7c59;
+}
+
+.location-page-card p {
+    color: #4b5563;
+    line-height: 1.7;
+}
+
 /* Contact sectie */
 .contact {
     background: #f8fafc;
