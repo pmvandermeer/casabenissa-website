@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetSection = document.querySelector(targetId);
             
             if (targetSection) {
-                const headerHeight = document.querySelector('.header').offsetHeight;
+                const headerHeight = document.querySelector('header').offsetHeight;
                 const targetPosition = targetSection.offsetTop - headerHeight;
                 
                 window.scrollTo({
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ctaButton.addEventListener('click', function() {
             const locationSection = document.querySelector('#locatie');
             if (locationSection) {
-                const headerHeight = document.querySelector('.header').offsetHeight;
+                const headerHeight = document.querySelector('header').offsetHeight;
                 const targetPosition = locationSection.offsetTop - headerHeight;
                 
                 window.scrollTo({
