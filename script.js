@@ -62,10 +62,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (ctaButton) {
         ctaButton.addEventListener('click', function() {
-            const servicesSection = document.querySelector('#diensten');
-            if (servicesSection) {
+            const locationSection = document.querySelector('#locatie');
+            if (locationSection) {
                 const headerHeight = document.querySelector('.header').offsetHeight;
-                const targetPosition = servicesSection.offsetTop - headerHeight;
+                const targetPosition = locationSection.offsetTop - headerHeight;
                 
                 window.scrollTo({
                     top: targetPosition,
