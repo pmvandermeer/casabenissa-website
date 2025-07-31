@@ -479,6 +479,14 @@ section h2 {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
+/* Casa Benissa specific hero */
+.casa-benissa-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/TrainingsRuimte-Kust-Spanje-1024x768.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
 /* Location overview section */
 .location-overview {
     padding: 4rem 0;
