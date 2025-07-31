@@ -75,15 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Scroll effect voor header
-    window.addEventListener('scroll', function() {
-        const header = document.querySelector('.header');
-        if (window.scrollY > 100) {
-            header.style.background = '#669897';
-        } else {
-            header.style.background = '#669897';
-        }
-    });
+    // Scroll effect voor header verwijderd om inline styles te voorkomen
 
     // Intersection Observer voor animaties
     const observerOptions = {
