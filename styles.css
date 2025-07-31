@@ -86,6 +86,52 @@ header {
     width: 100%;
 }
 
+/* Dropdown menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(102, 152, 151, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 1rem 0;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    list-style: none;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.dropdown-menu a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -371,6 +417,38 @@ section h2 {
 .gallery-overlay p {
     font-size: 0.9rem;
     opacity: 0.9;
+}
+
+/* Location detail sections */
+.location-detail {
+    padding: 4rem 0;
+    background: #f8fafc;
+}
+
+.location-detail:nth-child(even) {
+    background: white;
+}
+
+.location-detail-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.location-detail-text h3 {
+    color: #669897;
+    margin: 2rem 0 1rem 0;
+    font-size: 1.3rem;
+}
+
+.location-detail-text p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    color: #4b5563;
+}
+
+.location-detail-text strong {
+    color: #669897;
+    font-weight: 600;
 }
 
 /* Contact sectie */
