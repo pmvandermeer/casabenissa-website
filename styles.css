@@ -10,6 +10,7 @@ body {
     line-height: 1.6;
     color: #333;
     overflow-x: hidden;
+    background: none;
 }
 
 .container {
@@ -23,7 +24,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: transparent;
+    background: none;
     z-index: 1000;
 }
 

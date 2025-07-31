@@ -79,9 +79,9 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', function() {
         const header = document.querySelector('.header');
         if (window.scrollY > 100) {
-            header.style.background = 'rgba(0, 0, 0, 0.1)';
+            header.style.background = 'rgba(0, 0, 0, 0.05)';
         } else {
-            header.style.background = 'transparent';
+            header.style.background = 'none';
         }
     });
 
