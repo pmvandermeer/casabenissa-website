@@ -169,7 +169,7 @@ header {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.3) 100%);
     z-index: 1;
 }
 
@@ -453,7 +453,7 @@ section h2 {
 
 /* Page hero section */
 .page-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/Trainingslocatie-Spanje.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/Trainingslocatie-Spanje.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -481,7 +481,7 @@ section h2 {
 
 /* Casa Benissa specific hero */
 .casa-benissa-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/TrainingsRuimte-Kust-Spanje-1024x768.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/TrainingsRuimte-Kust-Spanje-1024x768.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -489,7 +489,7 @@ section h2 {
 
 /* Klimaat specific hero */
 .klimaat-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/play-de-la-fustera-600x400.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/play-de-la-fustera-600x400.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
