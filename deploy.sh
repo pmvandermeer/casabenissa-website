@@ -7,7 +7,7 @@
 FTP_HOST="casabenissa.pmvandermeer.nl"
 FTP_USER="casabenissa"
 FTP_PASS="Wat1feest!"
-FTP_PATH="/public_html/"
+FTP_PATH="/"
 
 # Kleuren voor output
 RED='\033[0;31m'
@@ -43,8 +43,9 @@ echo -e "${YELLOW}📤 Uploaden naar $FTP_HOST...${NC}"
 # Upload bestanden
 lftp -c "
     set ssl:verify-certificate no;
+    set ftp:ssl-allow no;
     open -u $FTP_USER,$FTP_PASS $FTP_HOST;
-    mirror --reverse --delete --verbose ./ $FTP_PATH;
+    mirror --reverse --delete --verbose --ignore-time --ignore-size ./ $FTP_PATH;
     exit;
 "
 

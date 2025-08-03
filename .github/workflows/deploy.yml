@@ -32,8 +32,9 @@ jobs:
         
         lftp -c "
           set ssl:verify-certificate no;
+          set ftp:ssl-allow no;
           open -u $FTP_USER,$FTP_PASS $FTP_HOST;
-          mirror --reverse --delete --verbose ./ $FTP_PATH;
+          mirror --reverse --delete --verbose --ignore-time --ignore-size ./ $FTP_PATH;
           exit;
         "
         
