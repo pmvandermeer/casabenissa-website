@@ -18,9 +18,10 @@ jobs:
       with:
         node-version: '18'
         
-    - name: Install dependencies
+    - name: Install LFTP
       run: |
-        npm install -g lftp
+        sudo apt-get update
+        sudo apt-get install -y lftp
         
     - name: Deploy to FTP
       env:
@@ -29,6 +30,7 @@ jobs:
         FTP_PASS: ${{ secrets.FTP_PASS }}
         FTP_PATH: ${{ secrets.FTP_PATH }}
       run: |
+        echo "🚀 Starting deployment to $FTP_HOST..."
         lftp -c "
           set ssl:verify-certificate no;
           open -u $FTP_USER,$FTP_PASS $FTP_HOST;
@@ -37,4 +39,6 @@ jobs:
         "
         
     - name: Deploy success
-      run: echo "Website successfully deployed!" 
+      run: |
+        echo "✅ Website successfully deployed!"
+        echo "🌐 Your website is now live at: https://casabenissa.nl" 
