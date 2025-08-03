@@ -59,6 +59,7 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Bescherm tegen hotlinking
 RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^https?://(www\.)?casabenissa\.pmvandermeer\.nl [NC]
 RewriteCond %{HTTP_REFERER} !^https?://(www\.)?casabenissa\.nl [NC]
 RewriteCond %{HTTP_REFERER} !^https?://(www\.)?google\.com [NC]
 RewriteCond %{HTTP_REFERER} !^https?://(www\.)?bing\.com [NC]

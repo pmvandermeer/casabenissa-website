@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://casabenissa.nl/sitemap.xml
+Sitemap: https://casabenissa.pmvandermeer.nl/sitemap.xml
 
 # Crawl-delay voor vriendelijke crawling
 Crawl-delay: 1
