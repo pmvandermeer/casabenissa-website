@@ -43,7 +43,9 @@ echo -e "${YELLOW}📤 Uploaden naar $FTP_HOST...${NC}"
 # Upload bestanden
 lftp -c "
     set ssl:verify-certificate no;
-    set ftp:ssl-allow no;
+    set ftp:ssl-allow yes;
+    set ftp:ssl-force yes;
+    set ftp:ssl-protect-data yes;
     open -u $FTP_USER,$FTP_PASS $FTP_HOST;
     mirror --reverse --delete --verbose --ignore-time --ignore-size ./ $FTP_PATH;
     exit;
