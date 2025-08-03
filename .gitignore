@@ -97,4 +97,10 @@ temp/
 # Configuratie bestanden met gevoelige informatie
 config.local.js
 secrets.json
-genereer_denia_haven.py 
+genereer_denia_haven.py
+
+# Behoud .htaccess en andere configuratie bestanden
+!.htaccess
+!robots.txt
+!sitemap.xml
+!.well-known/ 

@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://casabenissa.nl/sitemap.xml
+
+# Crawl-delay voor vriendelijke crawling
+Crawl-delay: 1
+
+# Blokkeer toegang tot gevoelige bestanden
+Disallow: /.well-known/
+Disallow: /.git/
+Disallow: /deploy.sh
+Disallow: /deploy.js
+Disallow: /package.json
+Disallow: /README.md
+Disallow: /DEPLOYMENT.md
+Disallow: /*.backup
+Disallow: /*.bak
+Disallow: /*.tmp
+Disallow: /*.log 
