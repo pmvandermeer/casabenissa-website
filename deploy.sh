@@ -4,9 +4,9 @@
 # Gebruik: ./deploy.sh
 
 # FTP Configuratie
-FTP_HOST="your-ftp-host.com"
-FTP_USER="your-username"
-FTP_PASS="your-password"
+FTP_HOST="casabenissa.pmvandermeer.nl"
+FTP_USER="casabenissa"
+FTP_PASS="Wat1feest!"
 FTP_PATH="/public_html/"
 
 # Kleuren voor output
