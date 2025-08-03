@@ -1,8 +1,6 @@
-name: Deploy Casa Benissa Website
+name: Deploy Casa Benissa (Backup)
 
 on:
-  push:
-    branches: [ main, master ]
   workflow_dispatch:
 
 jobs:
@@ -15,10 +13,8 @@ jobs:
       
     - name: Install LFTP
       run: |
-        echo "Installing LFTP..."
         sudo apt-get update
         sudo apt-get install -y lftp
-        echo "LFTP installed successfully"
         
     - name: Deploy to FTP server
       env:
@@ -28,8 +24,6 @@ jobs:
         FTP_PATH: ${{ secrets.FTP_PATH }}
       run: |
         echo "🚀 Starting deployment to $FTP_HOST..."
-        echo "Using FTP path: $FTP_PATH"
-        
         lftp -c "
           set ssl:verify-certificate no;
           open -u $FTP_USER,$FTP_PASS $FTP_HOST;
@@ -37,10 +31,7 @@ jobs:
           exit;
         "
         
-        echo "✅ Deployment completed successfully!"
-        
     - name: Success message
       run: |
         echo "🎉 Website successfully deployed!"
-        echo "🌐 Your website is now live at: https://casabenissa.nl"
-        echo "📅 Deployment completed at: $(date)" 
+        echo "🌐 Your website is now live at: https://casabenissa.nl" 
