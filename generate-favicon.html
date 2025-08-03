@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CB Favicon Generator</title>
+</head>
+<body>
+    <canvas id="favicon" width="32" height="32"></canvas>
+    <script>
+        const canvas = document.getElementById('favicon');
+        const ctx = canvas.getContext('2d');
+        
+        // Achtergrond - groene cirkel
+        ctx.fillStyle = '#669897';
+        ctx.beginPath();
+        ctx.arc(16, 16, 15, 0, 2 * Math.PI);
+        ctx.fill();
+        
+        // Witte cirkel voor tekst
+        ctx.fillStyle = 'white';
+        ctx.beginPath();
+        ctx.arc(16, 16, 10, 0, 2 * Math.PI);
+        ctx.fill();
+        
+        // CB tekst in groen
+        ctx.fillStyle = '#669897';
+        ctx.font = 'bold 12px Arial';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('CB', 16, 16);
+        
+        // Download als PNG
+        const link = document.createElement('a');
+        link.download = 'favicon-cb.png';
+        link.href = canvas.toDataURL();
+        link.click();
+        
+        console.log('Favicon gegenereerd!');
+    </script>
+</body>
+</html> 

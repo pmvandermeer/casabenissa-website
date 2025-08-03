@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bedankt - Offerte Aanvraag - Casa Benissa</title>
+            <link rel="shortcut icon" href="favicon.ico?v=5">
+        <link rel="icon" type="image/x-icon" href="favicon.ico?v=5">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon.png?v=5">
+        <link rel="apple-touch-icon" href="favicon.png?v=5">
+    <link rel="stylesheet" href="styles.css?v=1">
+    <style>
+        .bedankt-hero {
+            background: linear-gradient(135deg, #669897 0%, #5a8a89 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .bedankt-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .bedankt-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .bedankt-content {
+            max-width: 800px;
+            margin: 3rem auto;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .bedankt-content h2 {
+            color: #669897;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .bedankt-content p {
+            font-size: 1.1rem;
+            color: #4b5563;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        
+        .next-steps {
+            background: #f8fafc;
+            padding: 3rem 0;
+            margin: 2rem 0;
+        }
+        
+        .next-steps h3 {
+            color: #669897;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .next-steps ul {
+            max-width: 600px;
+            margin: 0 auto;
+            list-style: none;
+            padding: 0;
+        }
+        
+        .next-steps li {
+            padding: 0.5rem 0;
+            color: #4b5563;
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .next-steps li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #669897;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+        
+        .cta-button-primary {
+            background: linear-gradient(135deg, #669897 0%, #5a8a89 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 152, 151, 0.3);
+            border: 2px solid #669897;
+        }
+        
+        .cta-button-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 152, 151, 0.4);
+        }
+        
+        .cta-button-secondary {
+            background: transparent;
+            color: #669897;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid #669897;
+        }
+        
+        .cta-button-secondary:hover {
+            background: #669897;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(102, 152, 151, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-button-primary,
+            .cta-button-secondary {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+            
+            .bedankt-hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="images/logo-casa-benissa-groen-300x150.png" alt="Casa Benissa Logo" class="logo-img" loading="lazy">
+                    <h1>Casa Benissa</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="casa-benissa.html" class="nav-link">Casa Benissa</a></li>
+                    <li><a href="locatie.html" class="nav-link">Locatie</a></li>
+                    <li><a href="bezienswaardigheden.html" class="nav-link">Bezienswaardigheden</a></li>
+                    <li><a href="klimaat.html" class="nav-link">Klimaat</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="bedankt-hero">
+        <div class="container">
+            <h1>Bedankt voor je Offerte Aanvraag!</h1>
+            <p>We hebben je aanvraag succesvol ontvangen</p>
+        </div>
+    </section>
+
+    <section class="bedankt-content">
+        <div class="container">
+            <h2>Wat gebeurt er nu?</h2>
+            <p>We gaan direct aan de slag met het maken van een offerte op maat voor jouw training of evenement. Je ontvangt binnen 24 uur een reactie van ons.</p>
+        </div>
+    </section>
+
+    <section class="next-steps">
+        <div class="container">
+            <h3>Onze volgende stappen</h3>
+            <ul>
+                <li>We bekijken je specifieke wensen en behoeften</li>
+                <li>We maken een gedetailleerde offerte op maat</li>
+                <li>We nemen binnen 24 uur contact met je op</li>
+                <li>Indien gewenst plannen we een FaceTime afspraak</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="bedankt-content">
+        <div class="container">
+            <h2>Heb je nog vragen?</h2>
+            <p>Neem gerust contact met ons op als je nog vragen hebt of als je direct een afspraak wilt maken.</p>
+            
+            <div class="cta-buttons">
+                <a href="mailto:info@casabenissa.nl" class="cta-button-primary">Direct Email Sturen</a>
+                <a href="tel:+31652686298" class="cta-button-secondary">Direct Bellen</a>
+            </div>
+            
+            <p style="margin-top: 2rem;">
+                <strong>Email:</strong> info@casabenissa.nl<br>
+                <strong>Telefoon:</strong> +31 652686298
+            </p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Casa Benissa</h4>
+                    <p>De perfecte trainingslocatie aan de Costa Blanca, waar natuur en comfort samenkomen.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@casabenissa.nl</p>
+                    <p>Telefoon: +31 652686298</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Locatie</h4>
+                    <p>Carrer l'Api 5</p>
+                    <p>03720 Benissa, Alicante</p>
+                    <p>Spanje</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html> 

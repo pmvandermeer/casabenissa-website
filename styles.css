@@ -149,10 +149,6 @@ header {
 /* Hero sectie */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url('images/Trainingslocatie-Spanje.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -162,20 +158,34 @@ header {
     overflow: hidden;
 }
 
-.hero::before {
-    content: '';
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    background: #000;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.3) 100%);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.4) 100%);
     z-index: 1;
 }
 
+
+
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     max-width: 800px;
     padding: 0 2rem;
 }
@@ -244,34 +254,86 @@ section h2 {
     color: #4b5563;
 }
 
-.about-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+.about-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.stat {
-    text-align: center;
-    padding: 2rem;
-    background: white;
+.about-image img {
+    width: 100%;
+    height: auto;
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease;
 }
 
-.stat:hover {
+.about-image img:hover {
+    transform: scale(1.02);
+}
+
+.about-blocks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.about-block {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #e5e7eb;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #669897 0%, #4a7c59 100%);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.about-block:hover::before {
+    transform: scaleX(1);
+}
+
+.about-block:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-.stat h3 {
+.block-icon {
     font-size: 2.5rem;
-    color: #669897;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    display: block;
 }
 
-.stat p {
-    color: #6b7280;
+.about-block h3 {
+    font-size: 1.2rem;
+    color: #4b5563;
+    margin: 0;
+    line-height: 1.5;
     font-weight: 500;
+}
+
+.about-block.highlight {
+    background: linear-gradient(135deg, #669897 0%, #4a7c59 100%);
+    color: white;
+}
+
+.about-block.highlight h3 {
+    color: white;
+    font-weight: 600;
 }
 
 /* Diensten sectie */
@@ -330,8 +392,12 @@ section h2 {
 }
 
 .location-features {
+    margin-top: 2rem;
+}
+
+.features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
 }
 
@@ -356,6 +422,154 @@ section h2 {
 .feature p {
     color: #4b5563;
     line-height: 1.7;
+}
+
+/* Service packages styling */
+.service-packages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.package-card {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    border: 2px solid transparent;
+}
+
+.package-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-color: #669897;
+}
+
+.package-card.featured {
+    border-color: #669897;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    transform: scale(1.05);
+}
+
+.package-card.featured:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.package-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.package-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #669897;
+    font-weight: 600;
+}
+
+.package-features {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    text-align: left;
+}
+
+.package-features li {
+    padding: 0.5rem 0;
+    color: #4b5563;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.package-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #669897;
+    font-weight: bold;
+}
+
+.package-note {
+    font-style: italic;
+    color: #6b7280;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+}
+
+/* CTA Section styling */
+.cta-section {
+    text-align: center;
+    margin: 4rem 0 2rem;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 20px;
+    border: 2px solid #e2e8f0;
+}
+
+.cta-section h3 {
+    font-size: 2.2rem;
+    color: #669897;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.cta-section p {
+    font-size: 1.1rem;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-button-primary {
+    background: linear-gradient(135deg, #669897 0%, #5a8a89 100%);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(102, 152, 151, 0.3);
+    border: 2px solid #669897;
+}
+
+.cta-button-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 152, 151, 0.4);
+    background: linear-gradient(135deg, #5a8a89 0%, #4d7a79 100%);
+}
+
+.cta-button-secondary {
+    background: transparent;
+    color: #669897;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid #669897;
+}
+
+.cta-button-secondary:hover {
+    background: #669897;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(102, 152, 151, 0.3);
 }
 
 /* Galerij sectie */
@@ -453,18 +667,10 @@ section h2 {
 
 /* Page hero section */
 .page-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/Trainingslocatie-Spanje.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    padding: 12rem 0 6rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+    padding: 4rem 0;
     text-align: center;
     color: white;
-    margin-top: 0;
-    min-height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .page-hero h1 {
@@ -489,7 +695,7 @@ section h2 {
 
 /* Klimaat specific hero */
 .klimaat-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/play-de-la-fustera-600x400.jpg');
+    background: url('images/play-de-la-fustera-600x400.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -610,6 +816,234 @@ section h2 {
     font-size: 1rem;
     color: #3b82f6;
     font-weight: 500;
+}
+
+/* Beste reistijd sectie */
+.best-travel-time {
+    padding: 4rem 0;
+    background: #f8fafc;
+}
+
+.best-travel-time h2 {
+    text-align: center;
+    color: #669897;
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+}
+
+.section-intro {
+    text-align: center;
+    color: #6b7280;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.travel-time-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.season-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid;
+}
+
+.season-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.season-card.spring {
+    border-top-color: #4ade80;
+}
+
+.season-card.summer {
+    border-top-color: #fbbf24;
+}
+
+.season-card.autumn {
+    border-top-color: #f97316;
+}
+
+.season-card.winter {
+    border-top-color: #60a5fa;
+}
+
+.season-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.season-header h3 {
+    color: #374151;
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+.season-icon {
+    font-size: 2rem;
+}
+
+.temp-range {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.temp-min {
+    color: #3b82f6;
+}
+
+.temp-separator {
+    color: #6b7280;
+}
+
+.temp-max {
+    color: #ef4444;
+}
+
+.season-description {
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.season-highlights {
+    margin-bottom: 1.5rem;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #4b5563;
+}
+
+.highlight-icon {
+    font-size: 1.1rem;
+}
+
+.recommendation {
+    background: #f0f9ff;
+    border-left: 4px solid #669897;
+    padding: 1rem;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.9rem;
+    color: #1e40af;
+}
+
+.travel-tips {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.travel-tips h3 {
+    text-align: center;
+    color: #669897;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.tip-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.tip-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.tip-content h4 {
+    color: #374151;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.tip-content p {
+    color: #6b7280;
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+/* Responsive styling voor beste reistijd */
+@media (max-width: 768px) {
+    .best-travel-time h2 {
+        font-size: 1.8rem;
+    }
+    
+    .section-intro {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .travel-time-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .season-card {
+        padding: 1.5rem;
+    }
+    
+    .season-header h3 {
+        font-size: 1.2rem;
+    }
+    
+    .tips-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .tip-item {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .travel-time-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .season-card {
+        padding: 1rem;
+    }
+    
+    .season-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .temp-range {
+        font-size: 1rem;
+    }
 }
 
 /* House gallery section */
@@ -811,17 +1245,59 @@ section h2 {
         gap: 2rem;
     }
     
-    .about-stats {
-        grid-template-columns: 1fr;
-    }
+
     
     .contact-content {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
     
-    .location-features {
-        grid-template-columns: 1fr;
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    @media (max-width: 480px) {
+        .features-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    .service-packages {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .package-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .package-card.featured {
+        transform: none;
+    }
+    
+    .package-card.featured:hover {
+        transform: translateY(-10px);
+    }
+    
+    .cta-section {
+        padding: 2rem 1rem;
+    }
+    
+    .cta-section h3 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-button-primary,
+    .cta-button-secondary {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
     }
     
     .gallery-grid {
@@ -861,5 +1337,1584 @@ section h2 {
     
     .container {
         padding: 0 15px;
+    }
+}
+
+/* Bezienswaardigheden pagina styling */
+.bezienswaardigheden-hero {
+    background: linear-gradient(135deg, #669897 0%, #5a8a89 100%);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.bezienswaardigheden-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.bezienswaardigheden-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.bezienswaardigheden-content {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.bezienswaardigheden-content h2 {
+    color: #669897;
+    font-size: 2rem;
+    margin: 3rem 0 1.5rem 0;
+    border-bottom: 2px solid #669897;
+    padding-bottom: 0.5rem;
+}
+
+.bezienswaardigheden-content h3 {
+    color: #669897;
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem 0;
+}
+
+.bezienswaardigheden-content p {
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.bezienswaardigheden-content ul {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.bezienswaardigheden-content li {
+    margin-bottom: 0.5rem;
+    color: #4b5563;
+}
+
+.bezienswaardigheden-content strong {
+    color: #669897;
+}
+
+.bezienswaardigheden-content em {
+    color: #6b7280;
+}
+
+.bezienswaardigheden-content .intro {
+    font-size: 1.1rem;
+    background: #f8fafc;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+    border-left: 4px solid #669897;
+}
+
+.bezienswaardigheden-content .highlight-box {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+    border-left: 4px solid #669897;
+}
+
+.bezienswaardigheden-content .market-schedule {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.bezienswaardigheden-content .market-schedule h4 {
+    color: #669897;
+    margin-bottom: 1rem;
+}
+
+.bezienswaardigheden-content .market-schedule ul {
+    list-style: none;
+    padding: 0;
+}
+
+.bezienswaardigheden-content .market-schedule li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.bezienswaardigheden-content .market-schedule li:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 768px) {
+    .bezienswaardigheden-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .bezienswaardigheden-content {
+        padding: 0 1rem;
+    }
+    
+    .bezienswaardigheden-content h2 {
+        font-size: 1.8rem;
+    }
+}
+
+.bezienswaardigheden-content .feature-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin: 1.5rem auto;
+    display: block;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.bezienswaardigheden-content .feature-image:hover {
+    transform: scale(1.02);
+} 
+
+/* Related content blok */
+.related-content {
+    background: #f8fafc;
+    padding: 2rem 0 3rem 0;
+    margin-top: 2rem;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+.related-content h3 {
+    color: #669897;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.related-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.related-links li a {
+    color: #1e40af;
+    font-weight: 500;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+.related-links li a:hover {
+    color: #ef4444;
+} 
+
+/* Breadcrumbs */
+.breadcrumbs {
+    background: none;
+    margin: 0 0 1rem 0;
+    padding: 0;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+.breadcrumb-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.85rem;
+}
+.breadcrumb-item {
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+}
+.breadcrumb-item a {
+    color: #374151;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.2s;
+}
+.breadcrumb-item a:hover {
+    color: #669897;
+}
+.breadcrumb-item:not(:last-child)::after {
+    content: '>';
+    color: #d1d5db;
+    margin: 0 0.3em;
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+.breadcrumb-item[aria-current="page"] {
+    color: #6b7280;
+    font-weight: 500;
+} 
+
+/* Activiteiten pagina styling */
+.activiteiten-hero {
+    background: url('images/ecologisch-benissa-calpe.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    min-height: 400px;
+}
+
+.activiteiten-hero h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.activiteiten-hero p {
+    color: white;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.activiteiten-content {
+    padding: 4rem 0;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.activiteiten-content .intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    font-size: 1.1rem;
+    color: #6b7280;
+    line-height: 1.6;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.activiteiten-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    margin-bottom: 4rem;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.activiteit-category {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.activiteit-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.activiteit-category h2 {
+    color: #669897;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #f3f4f6;
+    padding-bottom: 0.5rem;
+}
+
+.activiteit-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.activiteit-item {
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 10px;
+    border-left: 4px solid #669897;
+}
+
+.activiteit-item h3 {
+    color: #374151;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.activiteit-item p {
+    color: #6b7280;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.activiteit-link {
+    color: #1e40af;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.activiteit-link:hover {
+    color: #ef4444;
+}
+
+.activiteiten-tips {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 3rem;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.activiteiten-tips h3 {
+    text-align: center;
+    color: #669897;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+/* Responsive styling voor activiteiten */
+@media (max-width: 768px) {
+    .activiteiten-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .activiteiten-hero p {
+        font-size: 1rem;
+    }
+    
+    .activiteiten-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .activiteit-category {
+        padding: 1.5rem;
+    }
+    
+    .activiteit-category h2 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Paseo Ecológico pagina styling */
+.page-content {
+    padding: 3rem 0;
+}
+
+.content-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 12px;
+}
+
+.content-intro p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #4b5563;
+    margin-bottom: 1rem;
+}
+
+.content-intro p:last-child {
+    margin-bottom: 0;
+}
+
+.content-section {
+    margin-bottom: 3rem;
+}
+
+.content-section h2 {
+    color: #669897;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.content-section h3 {
+    color: #4a7c59;
+    margin: 2rem 0 1rem;
+    font-size: 1.4rem;
+}
+
+.content-section p {
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.route-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.route-item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+}
+
+.route-item h3 {
+    color: #669897;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.route-item p {
+    color: #6b7280;
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+.info-box {
+    background: linear-gradient(135deg, #669897 0%, #4a7c59 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.info-box p {
+    margin: 0;
+    color: white;
+}
+
+.tips-box {
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.tips-box h3 {
+    color: #669897;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.tips-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.tips-box li {
+    color: #4b5563;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e5e7eb;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.tips-box li:before {
+    content: "✓";
+    color: #669897;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.tips-box li:last-child {
+    border-bottom: none;
+}
+
+.info-board {
+    background: #fff;
+    border-left: 4px solid #669897;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.info-board h4 {
+    color: #669897;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.info-board p {
+    color: #4b5563;
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+/* Responsive Paseo Ecológico */
+@media (max-width: 768px) {
+    .route-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .content-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .content-intro {
+        padding: 1.5rem;
+    }
+}
+
+/* Force immediate visibility for Paseo Ecológico page */
+.page-content,
+.content-intro,
+.content-section,
+.route-list,
+.route-item,
+.info-box,
+.tips-box,
+.info-board,
+.breadcrumbs,
+.related-content {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Natuur pagina styling */
+.nature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.nature-item {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.nature-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.nature-item:hover .nature-image {
+    transform: scale(1.05);
+}
+
+.nature-content {
+    padding: 1.5rem;
+}
+
+.nature-content h3 {
+    color: #669897;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.nature-content p {
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.wildlife-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.wildlife-card {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+    transition: transform 0.3s ease;
+}
+
+.wildlife-card:hover {
+    transform: translateY(-3px);
+}
+
+.wildlife-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.wildlife-card h3 {
+    color: #669897;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.wildlife-card p {
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.protected-areas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.area-item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border-left: 4px solid #669897;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.area-item h3 {
+    color: #669897;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.area-item p {
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.hiking-routes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.route-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+    transition: transform 0.3s ease;
+}
+
+.route-card:hover {
+    transform: translateY(-5px);
+}
+
+.route-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.route-info {
+    padding: 1.5rem;
+}
+
+.route-info h3 {
+    color: #669897;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.route-info p {
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.seasons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.season-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+    border-top: 4px solid;
+    transition: transform 0.3s ease;
+}
+
+.season-item:hover {
+    transform: translateY(-3px);
+}
+
+.season-item.spring {
+    border-top-color: #4ade80;
+}
+
+.season-item.summer {
+    border-top-color: #fbbf24;
+}
+
+.season-item.autumn {
+    border-top-color: #f97316;
+}
+
+.season-item.winter {
+    border-top-color: #60a5fa;
+}
+
+.season-item h3 {
+    color: #669897;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.season-item p {
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.sustainability-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.sustainability-item {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid #bbf7d0;
+}
+
+.sustainability-item h3 {
+    color: #669897;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.sustainability-item p {
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Responsive natuur pagina */
+@media (max-width: 768px) {
+    .nature-grid,
+    .wildlife-grid,
+    .protected-areas,
+    .hiking-routes,
+    .seasons-grid,
+    .sustainability-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .nature-image {
+        height: 200px;
+    }
+    
+    .route-image {
+        height: 150px;
+    }
+}
+
+/* Omgeving pagina styling */
+.location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin: 2rem 0;
+    align-items: center;
+}
+
+.location-grid.reverse {
+    grid-template-columns: 1fr 1fr;
+}
+
+.location-grid.reverse .location-image {
+    order: 2;
+}
+
+.location-grid.reverse .location-content {
+    order: 1;
+}
+
+.location-image {
+    position: relative;
+}
+
+.location-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.location-img:hover {
+    transform: scale(1.02);
+}
+
+.location-content {
+    padding: 1rem 0;
+}
+
+.location-content p {
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.location-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    border-left: 3px solid #669897;
+}
+
+.feature-icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.feature-item span:last-child {
+    color: #374151;
+    font-weight: 500;
+}
+
+.highlight-box {
+    background: linear-gradient(135deg, #669897 0%, #4a7c59 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.highlight-box h3 {
+    color: white;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.highlight-box p {
+    color: white;
+    margin-bottom: 0;
+    opacity: 0.95;
+}
+
+.valley-villages {
+    margin: 2rem 0;
+}
+
+.valley-villages h3 {
+    color: #669897;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.village-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+}
+
+.village-item {
+    background: #f8fafc;
+    padding: 0.75rem;
+    border-radius: 6px;
+    text-align: center;
+    color: #374151;
+    font-weight: 500;
+    border: 1px solid #e5e7eb;
+    transition: background-color 0.3s ease;
+}
+
+.village-item:hover {
+    background: #e2e8f0;
+}
+
+.cities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.city-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.city-card:hover {
+    transform: translateY(-5px);
+}
+
+.city-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.city-card h3 {
+    color: #669897;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.city-card p {
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.city-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.highlight {
+    background: #f8fafc;
+    padding: 0.5rem;
+    border-radius: 6px;
+    color: #374151;
+    font-size: 0.9rem;
+    border-left: 3px solid #669897;
+}
+
+.distances-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.distance-item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+}
+
+.distance-item h3 {
+    color: #669897;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.distance-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.distance-item li {
+    color: #4b5563;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f3f4f6;
+    display: flex;
+    justify-content: space-between;
+}
+
+.distance-item li:last-child {
+    border-bottom: none;
+}
+
+.distance-item strong {
+    color: #374151;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.tip-card {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid #e5e7eb;
+}
+
+.tip-card h3 {
+    color: #669897;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.tip-card p {
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Responsive omgeving pagina */
+@media (max-width: 768px) {
+    .location-grid,
+    .location-grid.reverse {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .location-grid.reverse .location-image,
+    .location-grid.reverse .location-content {
+        order: unset;
+    }
+    
+    .location-img {
+        height: 250px;
+    }
+    
+    .location-features {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    
+    .village-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+    
+    .cities-grid,
+    .distances-grid,
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+} 
+
+/* Omgeving pagina specifieke styling */
+.page-content .feature-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin: 1rem auto;
+    display: block;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.page-content .feature-image:hover {
+    transform: scale(1.02);
+}
+
+.page-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.page-content .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.content-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 0 1rem;
+}
+
+.content-section {
+    margin-bottom: 3rem;
+    padding: 0 1rem;
+}
+
+.content-section h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #669897;
+    font-size: 1.8rem;
+}
+
+.content-section p {
+    text-align: justify;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.highlight-box {
+    background: #f8fafc;
+    border-left: 4px solid #669897;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 8px 8px 0;
+    color: #333;
+}
+
+.highlight-box h3 {
+    color: #669897;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.highlight-box p {
+    margin: 0;
+    text-align: left;
+    color: #333;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* Responsive aanpassingen voor omgeving pagina */
+@media (max-width: 768px) {
+    .page-content .feature-image {
+        max-width: 250px;
+    }
+    
+    .page-content {
+        padding: 1rem 0;
+    }
+    
+    .content-section {
+        padding: 0 0.5rem;
+    }
+    
+    .content-section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-content .feature-image {
+        max-width: 200px;
+    }
+    
+    .page-content .container {
+        padding: 0 10px;
+    }
+    
+    .content-intro,
+    .content-section {
+        padding: 0 0.25rem;
+    }
+} 
+
+/* Omgeving pagina nieuwe layout */
+.omgeving-content {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.omgeving-content .intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 12px;
+    color: #333;
+}
+
+.omgeving-content .intro p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #4b5563;
+    margin-bottom: 1rem;
+}
+
+.omgeving-content .intro p:last-child {
+    margin-bottom: 0;
+}
+
+/* Plaatsen grid */
+.plaatsen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.plaats-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.plaats-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.plaats-header {
+    background: linear-gradient(135deg, #669897 0%, #4a7c59 100%);
+    color: white;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.plaats-icon {
+    font-size: 2rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plaats-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+}
+
+.plaats-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.plaats-content {
+    padding: 1.5rem;
+}
+
+.plaats-content p {
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.plaats-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Info box styling */
+.omgeving-content .info-box {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-left: 4px solid #0ea5e9;
+    padding: 1rem;
+    border-radius: 0 8px 8px 0;
+    margin: 1rem 0;
+}
+
+.omgeving-content .info-box h3 {
+    color: #0c4a6e;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.omgeving-content .info-box p {
+    color: #0c4a6e;
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Afstanden sectie */
+.afstanden-sectie {
+    margin: 3rem 0;
+}
+
+.afstanden-sectie h2 {
+    text-align: center;
+    color: #669897;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #669897;
+    padding-bottom: 0.5rem;
+}
+
+.afstanden-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.afstand-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #669897;
+}
+
+.afstand-card h3 {
+    color: #669897;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.afstand-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.afstand-card li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e5e7eb;
+    color: #4b5563;
+}
+
+.afstand-card li:last-child {
+    border-bottom: none;
+}
+
+.afstand-card strong {
+    color: #669897;
+}
+
+/* Tips sectie */
+.tips-sectie {
+    margin: 3rem 0;
+}
+
+.tips-sectie h2 {
+    text-align: center;
+    color: #669897;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #669897;
+    padding-bottom: 0.5rem;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.tip-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-3px);
+}
+
+.tip-card h3 {
+    color: #669897;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.tip-card p {
+    color: #6b7280;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .omgeving-content {
+        padding: 0 1rem;
+    }
+    
+    .plaatsen-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .plaats-header {
+        padding: 1rem;
+    }
+    
+    .plaats-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .plaats-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+    
+    .afstanden-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tips-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .omgeving-content {
+        padding: 0 0.5rem;
+    }
+    
+    .plaats-content {
+        padding: 1rem;
+    }
+    
+    .afstand-card {
+        padding: 1.5rem;
+    }
+    
+    .tip-card {
+        padding: 1rem;
+    }
+} 
+
+/* Lightbox styling */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(3px);
+}
+
+.lightbox-content {
+    position: relative;
+    margin: 5% auto;
+    padding: 0;
+    width: 90%;
+    max-width: 800px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    animation: popupFadeIn 0.3s ease-out;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #333;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+    transition: color 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+    color: #669897;
+    background: white;
+}
+
+#lightbox-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px 15px 0 0;
+}
+
+.lightbox-caption {
+    padding: 20px;
+    text-align: center;
+    color: #333;
+    background: white;
+}
+
+.lightbox-caption h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #669897;
+}
+
+.lightbox-caption p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+}
+
+/* Gallery item cursor pointer */
+.gallery-item {
+    cursor: pointer;
+}
+
+/* Popup animation */
+@keyframes popupFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Responsive lightbox */
+@media (max-width: 768px) {
+    .lightbox-content {
+        width: 95%;
+        margin: 10% auto;
+        max-width: none;
+    }
+    
+    .lightbox-close {
+        top: 10px;
+        right: 15px;
+        font-size: 24px;
+        width: 35px;
+        height: 35px;
+    }
+    
+    .lightbox-caption {
+        padding: 15px;
+    }
+    
+    .lightbox-caption h3 {
+        font-size: 1.2rem;
+    }
+    
+    .lightbox-caption p {
+        font-size: 0.9rem;
     }
 } 

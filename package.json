@@ -1,0 +1,27 @@
+{
+  "name": "casabenissa-website",
+  "version": "1.0.0",
+  "description": "Casa Benissa Website - Trainingslocatie in Spanje",
+  "main": "index.html",
+  "scripts": {
+    "deploy": "node deploy.js",
+    "dev": "python3 -m http.server 8000",
+    "build": "echo 'No build step needed for static website'",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": [
+    "website",
+    "training",
+    "spain",
+    "costa-blanca",
+    "benissa"
+  ],
+  "author": "Casa Benissa",
+  "license": "MIT",
+  "devDependencies": {
+    "basic-ftp": "^5.0.3"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+} 

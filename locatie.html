@@ -4,33 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Locatie - Casa Benissa</title>
-    <link rel="stylesheet" href="styles.css">
+            <link rel="shortcut icon" href="favicon.ico?v=5">
+        <link rel="icon" type="image/x-icon" href="favicon.ico?v=5">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon.png?v=5">
+        <link rel="apple-touch-icon" href="favicon.png?v=5">
+    <link rel="stylesheet" href="styles.css?v=1">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .location-overview .location-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .location-overview .location-features {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .location-overview .location-features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav class="nav">
             <div class="nav-container">
                 <div class="logo">
-                    <img src="images/Casa-benissa-logo.png" alt="Casa Benissa Logo" class="logo-img">
+                    <img src="images/Casa-benissa-logo.png" alt="Casa Benissa Logo" class="logo-img" loading="lazy">
                 </div>
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="index.html#over-ons" class="nav-link">Over Ons</a></li>
-                    <li><a href="index.html#diensten" class="nav-link">Trainingen</a></li>
-                    <li class="dropdown">
-                        <a href="locatie.html" class="nav-link">Locatie</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="casa-benissa.html">Casa Benissa</a></li>
-                            <li><a href="klimaat.html">Klimaat</a></li>
-                            <li><a href="bezienswaardigheden.html">Bezienswaardigheden</a></li>
-                            <li><a href="omgeving.html">Omgeving</a></li>
-                            <li><a href="geschiedenis.html">Geschiedenis</a></li>
+                                        <ul class="nav-menu">
+                            <li><a href="index.html" class="nav-link">Home</a></li>
+                            <li><a href="index.html#over-ons" class="nav-link">Over Ons</a></li>
+                            <li class="dropdown">
+                                <a href="activiteiten.html" class="nav-link">Activiteiten</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="paseo-ecologico.html">Paseo Ecológico</a></li>
+                                    <li><a href="natuur.html">Natuur</a></li>
+                                    <li><a href="wandelen.html">Wandelen</a></li>
+                                    <li><a href="fietsen.html">Fietsen</a></li>
+                                    <li><a href="wellness.html">Wellness</a></li>
+                                    <li><a href="restaurants.html">Restaurants</a></li>
+                                    <li><a href="markten.html">Markten</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="locatie.html" class="nav-link">Locatie</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="casa-benissa.html">Casa Benissa</a></li>
+                                    <li><a href="klimaat.html">Klimaat</a></li>
+                                    <li><a href="bezienswaardigheden.html">Bezienswaardigheden</a></li>
+                                    <li><a href="omgeving.html">Omgeving</a></li>
+                                    <li><a href="geschiedenis.html">Geschiedenis</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="index.html#galerij" class="nav-link">Galerij</a></li>
+                            <li><a href="index.html#contact" class="nav-link">Contact</a></li>
                         </ul>
-                    </li>
-                    <li><a href="index.html#galerij" class="nav-link">Galerij</a></li>
-                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
-                </ul>
                 <div class="hamburger">
                     <span></span>
                     <span></span>
@@ -41,13 +76,26 @@
     </header>
 
     <main>
-        <section class="page-hero">
+        <section class="page-hero" style="background-image: url('images/Trainingslocatie-Spanje.jpg'); background-size: cover; background-position: center bottom;">
             <div class="container">
-                <h1>Onze Locatie</h1>
-                <p>Ontdek de magische omgeving van Casa Benissa aan de Costa Blanca</p>
+                <h1>Trainingslocatie Spanje</h1>
+                <p>Perfecte locatie voor workshops en retraites aan de Costa Blanca</p>
             </div>
         </section>
 
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <div class="container">
+                <ol class="breadcrumb-list">
+                    <li class="breadcrumb-item">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="breadcrumb-item" aria-current="page">
+                        Locatie
+                    </li>
+                </ol>
+            </div>
+        </nav>
+        
         <section class="location-overview">
             <div class="container">
                 <h2>Waarom kiezen voor Casa Benissa?</h2>
@@ -63,6 +111,36 @@
                     <div class="feature">
                         <h4>🏊 Zwembad & BBQ</h4>
                         <p>Gebruik van alle faciliteiten, waaronder een zwembad, een ruime buitenkeuken met BBQ en pizzaoven, en een speciale massageruimte. Binnen is er voldoende ruimte en verwarming voor de koelere dagen.</p>
+                    </div>
+                </div>
+                
+                <div class="location-features" style="margin-top: 3rem;">
+                    <div class="feature">
+                        <h4>🌅 Rust & Ruimte</h4>
+                        <p>Geniet van de rust en ruimte die Casa Benissa biedt. Gelegen aan de rand van een uitgestrekt natuurgebied, ver weg van de drukte van de stad, creëert deze locatie de perfecte omgeving voor focus en ontspanning.</p>
+                    </div>
+                    <div class="feature">
+                        <h4>🌞 300+ Zonnedagen</h4>
+                        <p>Profiteer van het heerlijke mediterrane klimaat met meer dan 300 zonnige dagen per jaar. Ideaal voor outdoor trainingen, yoga sessies in de open lucht en ontspannende momenten in de natuur.</p>
+                    </div>
+                    <div class="feature">
+                        <h4>🎯 Flexibele Ruimtes</h4>
+                        <p>Onze trainingsruimtes zijn volledig aanpasbaar aan jouw behoeften. Van intieme workshops tot grotere groepen van 4-30 personen, alles is mogelijk in onze flexibele en multifunctionele ruimtes.</p>
+                    </div>
+                </div>
+                
+                <div class="location-features" style="margin-top: 3rem;">
+                    <div class="feature">
+                        <h4>🍽️ Lokale Keuken</h4>
+                        <p>Geniet van authentieke Spaanse gerechten en lokale specialiteiten. Onze professionele catering gebruikt verse, lokale ingrediënten om jouw training of retraite tot een culinaire ervaring te maken.</p>
+                    </div>
+                    <div class="feature">
+                        <h4>🚗 Makkelijk Bereikbaar</h4>
+                        <p>Perfect gelegen op slechts 45 minuten van Alicante Airport. Met directe vluchten vanuit Nederland en België ben je snel op locatie. Wij kunnen ook vervoer vanaf het vliegveld regelen.</p>
+                    </div>
+                    <div class="feature">
+                        <h4>🌟 Persoonlijke Service</h4>
+                        <p>Bij Casa Benissa krijg je persoonlijke aandacht en service. Van de eerste contact tot het einde van je verblijf zorgen wij ervoor dat alles perfect geregeld is, zodat jij je kunt focussen op je training.</p>
                     </div>
                 </div>
             </div>
@@ -95,9 +173,19 @@
                 </div>
             </div>
         </section>
-    </main>
 
-    <footer class="footer">
+        <section class="related-content">
+            <div class="container">
+                <h3>Meer ontdekken</h3>
+                <ul class="related-links">
+                    <li><a href="klimaat.html">Klimaat van Benissa</a></li>
+                    <li><a href="bezienswaardigheden.html">Bezienswaardigheden</a></li>
+                    <li><a href="casa-benissa.html">Over Casa Benissa</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">

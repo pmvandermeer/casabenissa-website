@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offerte Aanvragen - Casa Benissa</title>
+            <link rel="shortcut icon" href="favicon.ico?v=5">
+        <link rel="icon" type="image/x-icon" href="favicon.ico?v=5">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon.png?v=5">
+        <link rel="apple-touch-icon" href="favicon.png?v=5">
+    <link rel="stylesheet" href="styles.css?v=1">
+    <style>
+        .offerte-hero {
+            background: linear-gradient(135deg, #669897 0%, #5a8a89 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .offerte-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .offerte-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .offerte-intro {
+            max-width: 800px;
+            margin: 0.5rem auto;
+            text-align: center;
+        }
+        
+        .offerte-intro h2 {
+            color: #669897;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .offerte-intro p {
+            font-size: 1.1rem;
+            color: #4b5563;
+            line-height: 1.7;
+            margin-bottom: 0.5rem;
+        }
+        
+        .offerte-steps {
+            background: #f8fafc;
+            padding: 3rem 0;
+            margin: 2rem 0;
+        }
+        
+        .offerte-steps h3 {
+            color: #669897;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .offerte-steps ul {
+            max-width: 600px;
+            margin: 0 auto;
+            list-style: none;
+            padding: 0;
+        }
+        
+        .offerte-steps li {
+            padding: 0.5rem 0;
+            color: #4b5563;
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .offerte-steps li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #669897;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .offerte-form {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 2rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #669897;
+        }
+        
+        .radio-option label,
+        .checkbox-option label {
+            color: #333;
+            font-weight: normal;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #669897;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .radio-group {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .radio-option input[type="radio"] {
+            width: auto;
+        }
+        
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .checkbox-option input[type="checkbox"] {
+            width: auto;
+        }
+        
+        .submit-offerte {
+            background: linear-gradient(135deg, #669897 0%, #5a8a89 100%);
+            color: white;
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 152, 151, 0.3);
+        }
+        
+        .submit-offerte:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 152, 151, 0.4);
+        }
+        
+        .contact-info {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .contact-info h3 {
+            color: #669897;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info p {
+            margin: 0.5rem 0;
+            color: #4b5563;
+        }
+        
+        .back-link {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .back-link a {
+            color: #669897;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .radio-group {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .checkbox-group {
+                grid-template-columns: 1fr;
+            }
+            
+            .offerte-hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="images/logo-casa-benissa-groen-300x150.png" alt="Casa Benissa Logo" class="logo-img" loading="lazy">
+                    <h1>Casa Benissa</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="casa-benissa.html" class="nav-link">Casa Benissa</a></li>
+                    <li><a href="locatie.html" class="nav-link">Locatie</a></li>
+                    <li><a href="bezienswaardigheden.html" class="nav-link">Bezienswaardigheden</a></li>
+                    <li><a href="klimaat.html" class="nav-link">Klimaat</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="offerte-hero">
+        <div class="container">
+            <h1>Offerte Aanvragen</h1>
+            <p>Leuk dat je interesse hebt in onze trainingslocatie Casa Benissa</p>
+        </div>
+    </section>
+
+    <section class="offerte-intro">
+        <div class="container">
+            <h2>Heb je zelf nog wensen die belangrijk zijn om mee te nemen?</h2>
+            <p>Geef dit dan aan bij de offerteaanvraag zodat we direct een compleet beeld krijgen.</p>
+        </div>
+    </section>
+
+    <section class="offerte-steps">
+        <div class="container">
+            <h3>Na het versturen van de aanvraag</h3>
+            <ul>
+                <li>Gaan we aan de slag met het maken van een offerte</li>
+                <li>Deze vrijblijvende offerte kan altijd worden aangepast</li>
+                <li>Wees zo uitgebreid mogelijk zodat we rekening kunnen houden met je wensen</li>
+                <li>Indien nodig nemen we telefonisch contact op om details te beschrijven</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="offerte-form">
+        <div class="container">
+            <form action="send-offerte.php" method="post">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="voornaam">Voornaam *</label>
+                        <input type="text" id="voornaam" name="voornaam" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="achternaam">Achternaam *</label>
+                        <input type="text" id="achternaam" name="achternaam" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="bedrijfsnaam">Bedrijfsnaam</label>
+                    <input type="text" id="bedrijfsnaam" name="bedrijfsnaam">
+                </div>
+                
+                <div class="form-group">
+                    <label>Is je evenement privé of zakelijk? *</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="privé" name="evenement_type" value="privé" required>
+                            <label for="privé">Privé</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="zakelijk" name="evenement_type" value="zakelijk" required>
+                            <label for="zakelijk">Zakelijk</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefoon">Telefoon *</label>
+                        <input type="tel" id="telefoon" name="telefoon" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="evenement_soort">Wat voor soort evenement wil je geven? *</label>
+                    <select id="evenement_soort" name="evenement_soort" required>
+                        <option value="">Selecteer type evenement</option>
+                        <option value="training">Training</option>
+                        <option value="retraite">Retraite</option>
+                        <option value="workshop">Workshop</option>
+                        <option value="offsite">Offsite / Teambuilding</option>
+                        <option value="anders">Anders</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="extra_info">Heb je nog informatie die ons helpt met de offerte?</label>
+                    <textarea id="extra_info" name="extra_info" rows="4" placeholder="Lay-out, specifieke wensen, etc."></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="datum">Wanneer wil je de training geven?</label>
+                        <input type="text" id="datum" name="datum" placeholder="Bijv. Maart 2024 of flexibel">
+                    </div>
+                    <div class="form-group">
+                        <label for="deelnemers">Hoeveel deelnemers worden er verwacht? *</label>
+                        <select id="deelnemers" name="deelnemers" required>
+                            <option value="">Selecteer aantal</option>
+                            <option value="4-10">4-10 personen</option>
+                            <option value="11-20">11-20 personen</option>
+                            <option value="21-30">21-30 personen</option>
+                            <option value="30+">Meer dan 30 personen</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dagen">Hoeveel dagen duurt je event?</label>
+                    <select id="dagen" name="dagen">
+                        <option value="">Selecteer duur</option>
+                        <option value="1-dag">1 dag</option>
+                        <option value="2-3-dagen">2-3 dagen</option>
+                        <option value="4-7-dagen">4-7 dagen</option>
+                        <option value="1-week+">1 week of langer</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="verwachting">Wat verwacht je van ons? *</label>
+                    <select id="verwachting" name="verwachting" required>
+                        <option value="">Selecteer pakket</option>
+                        <option value="basis">Basis – Alleen verhuur</option>
+                        <option value="basis-plus">Basis Plus – Inclusief catering</option>
+                        <option value="compleet">Compleet – Volledig ontzorgen</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Wil je een face-time afspraak maken om de locatie te bekijken?</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="facetime_ja" name="facetime" value="ja">
+                            <label for="facetime_ja">Ja, graag</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="facetime_nee" name="facetime" value="nee">
+                            <label for="facetime_nee">Nee, niet nodig</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="facetime_misschien" name="facetime" value="misschien">
+                            <label for="facetime_misschien">Nog niet, misschien later</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Welke faciliteiten heb je nodig tijdens de training?</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="wifi" name="faciliteiten[]" value="wifi">
+                            <label for="wifi">Wi-Fi</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="flexibele_opstelling" name="faciliteiten[]" value="flexibele_opstelling">
+                            <label for="flexibele_opstelling">Flexibele opstelling van het meubilair</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="trainers_kit" name="faciliteiten[]" value="trainers_kit">
+                            <label for="trainers_kit">Trainers kit met o.a. sticky notes, stiften en pennen</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="flip_over" name="faciliteiten[]" value="flip_over">
+                            <label for="flip_over">Verrijdbare flip-over en/of whiteboard</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="monitor" name="faciliteiten[]" value="monitor">
+                            <label for="monitor">Monitor voor meetings</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="audio" name="faciliteiten[]" value="audio">
+                            <label for="audio">Audio apparatuur voor meetings</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Wat wil je meegenomen hebben in de offerte?</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="dranken" name="offerte_inclusief[]" value="dranken">
+                            <label for="dranken">Koffie, thee, water, verse sapjes en frisdranken</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="alcohol" name="offerte_inclusief[]" value="alcohol">
+                            <label for="alcohol">Alocholische dranken tijdens het evenement</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="maaltijden" name="offerte_inclusief[]" value="maaltijden">
+                            <label for="maaltijden">Ontbijt, lunch en diner tijdens het evenement</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="verblijf" name="offerte_inclusief[]" value="verblijf">
+                            <label for="verblijf">Verblijf tijdens het evenement (aparte accommodatie)</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="taxi" name="offerte_inclusief[]" value="taxi">
+                            <label for="taxi">Haal- en brengservice Alicante Airport</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="vlucht" name="offerte_inclusief[]" value="vlucht">
+                            <label for="vlucht">Retourvlucht Amsterdam/Eindhoven - Alicante</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="activiteit1" name="offerte_inclusief[]" value="activiteit1">
+                            <label for="activiteit1">Optionele activiteit 1: Yoga of wandel activiteit</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="activiteit2" name="offerte_inclusief[]" value="activiteit2">
+                            <label for="activiteit2">Optionele activiteit 2: Kookcursus (Paelle maken of BBQ master)</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="activiteit3" name="offerte_inclusief[]" value="activiteit3">
+                            <label for="activiteit3">Optionele activiteit 3: (Elektrische) fietsverhuur</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="activiteit4" name="offerte_inclusief[]" value="activiteit4">
+                            <label for="activiteit4">Optionele activiteit 4: Massage en/of Reiki</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="anders" name="offerte_inclusief[]" value="anders">
+                            <label for="anders">Anders</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="vragen">Heb je nog vragen en/of opmerkingen?</label>
+                    <textarea id="vragen" name="vragen" rows="4" placeholder="Extra informatie, specifieke wensen, etc."></textarea>
+                </div>
+                
+                <div style="text-align: center;">
+                    <button type="submit" class="submit-offerte">Vrijblijvende offerte aanvragen</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="contact-info">
+        <div class="container">
+            <h3>Heb je een vraag?</h3>
+            <p><strong>Mail:</strong> info@casabenissa.nl</p>
+            <p><strong>Bel of app:</strong> +31 652686298</p>
+            <p><strong>Casa Benissa</strong></p>
+            <p>Carrer l'Api 5</p>
+            <p>03720 Benissa</p>
+            <p>Alicante – Spanje</p>
+        </div>
+    </section>
+
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Casa Benissa</h4>
+                    <p>De perfecte trainingslocatie aan de Costa Blanca, waar natuur en comfort samenkomen.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@casabenissa.nl</p>
+                    <p>Telefoon: +31 652686298</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Locatie</h4>
+                    <p>Carrer l'Api 5</p>
+                    <p>03720 Benissa, Alicante</p>
+                    <p>Spanje</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html> 

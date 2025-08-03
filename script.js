@@ -1,5 +1,13 @@
 // Smooth scrolling voor navigatie links
 document.addEventListener('DOMContentLoaded', function() {
+    // Video autoplay forceren
+    const heroVideo = document.querySelector('.hero-video');
+    if (heroVideo) {
+        heroVideo.play().catch(function(error) {
+            console.log('Video autoplay failed:', error);
+        });
+    }
+    
     // Smooth scrolling
     const navLinks = document.querySelectorAll('.nav-link');
     
@@ -106,10 +114,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Observeer alle secties voor animaties
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(30px)';
-        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(section);
+        // Skip animatie voor page-content secties (omgeving pagina)
+        if (section.classList.contains('page-content')) {
+            section.style.opacity = '1';
+            section.style.transform = 'translateY(0)';
+        } else {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        }
     });
 
     // Service cards hover effect

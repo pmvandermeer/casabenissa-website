@@ -3,21 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casa Benissa - Trainingslocatie in Spanje</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Trainingslocatie Spanje Huren | Casa Benissa - Perfecte Locatie Costa Blanca</title>
+    <meta name="description" content="Huur een trainingslocatie in Spanje bij Casa Benissa. Perfecte locatie voor workshops, retraites en zakelijke evenementen aan de Costa Blanca. Vanaf €75 per persoon per dag.">
+    <meta name="keywords" content="trainingslocatie spanje huren, workshop locatie spanje, retraite spanje, zakelijke evenementen costa blanca, trainingsruimte spanje, casa benissa">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://casabenissa.nl/">
+    <meta property="og:title" content="Trainingslocatie Spanje Huren | Casa Benissa">
+    <meta property="og:description" content="Huur een trainingslocatie in Spanje bij Casa Benissa. Perfecte locatie voor workshops, retraites en zakelijke evenementen aan de Costa Blanca.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://casabenissa.nl/">
+    <meta property="og:image" content="https://casabenissa.nl/images/Trainingslocatie-Spanje.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Trainingslocatie Spanje Huren | Casa Benissa">
+    <meta name="twitter:description" content="Huur een trainingslocatie in Spanje bij Casa Benissa. Perfecte locatie voor workshops, retraites en zakelijke evenementen.">
+            <link rel="shortcut icon" href="favicon-cb.png?v=10">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-cb.png?v=10">
+        <link rel="apple-touch-icon" href="favicon-cb.png?v=10">
+    <style>
+        /* Kritieke CSS voor hero sectie */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            background: #000;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.4) 100%);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        .cta-button {
+            background: #669897;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+    </style>
+            <link rel="stylesheet" href="styles.css?v=1">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 </head>
 <body>
     <header>
         <nav class="nav">
             <div class="nav-container">
                 <div class="logo">
-                    <img src="images/Casa-benissa-logo.png" alt="Casa Benissa Logo" class="logo-img">
+                    <img src="images/Casa-benissa-logo.png" alt="Casa Benissa Logo" class="logo-img" loading="lazy">
                 </div>
                 <ul class="nav-menu">
                     <li><a href="#home" class="nav-link">Home</a></li>
                     <li><a href="#over-ons" class="nav-link">Over Ons</a></li>
-                    <li><a href="#diensten" class="nav-link">Trainingen</a></li>
+                                                <li class="dropdown">
+                                <a href="activiteiten.html" class="nav-link">Activiteiten</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="paseo-ecologico.html">Paseo Ecológico</a></li>
+                                    <li><a href="natuur.html">Natuur</a></li>
+                                    <li><a href="wandelen.html">Wandelen</a></li>
+                                    <li><a href="fietsen.html">Fietsen</a></li>
+                                    <li><a href="wellness.html">Wellness</a></li>
+                                    <li><a href="restaurants.html">Restaurants</a></li>
+                                    <li><a href="markten.html">Markten</a></li>
+                                </ul>
+                            </li>
                     <li class="dropdown">
                         <a href="locatie.html" class="nav-link">Locatie</a>
                         <ul class="dropdown-menu">
@@ -42,80 +128,116 @@
 
     <main>
         <section id="home" class="hero">
+            <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="images/Trainingslocatie-Spanje.jpg">
+                <source src="images/Casa-Benissa-buiten-optimized.mp4" type="video/mp4">
+                Je browser ondersteunt geen video afspelen.
+            </video>
+            <div class="hero-overlay"></div>
             <div class="hero-content">
-                <h1 class="hero-title">Organiseer je eigen training in Spanje</h1>
-                <p class="hero-subtitle">Een adembenemende locatie aan de Costa Blanca voor retraites, workshops en evenementen</p>
+                <h1 class="hero-title">Huur een trainingslocatie in Spanje</h1>
+                <p class="hero-subtitle">Perfecte locatie voor workshops en retraites aan de Costa Blanca</p>
                 <button class="cta-button">Bekijk onze locatie</button>
             </div>
         </section>
 
         <section id="over-ons" class="about">
             <div class="container">
-                <h2>Over Casa Benissa</h2>
+                <h2>Trainingslocatie Spanje - Casa Benissa</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>Welkom bij Casa Benissa, een adembenemende locatie aan de zonovergoten Costa Blanca, waar natuur en creativiteit hand in hand gaan. Gelegen aan de rand van een uitgestrekt natuurgebied en op slechts een korte wandeling van de Middellandse Zee, biedt Casa Benissa de perfecte omgeving om te ontspannen, verbinden en geïnspireerd te raken.</p>
+                        <p>Welkom bij Casa Benissa, de perfecte locatie aan de zonovergoten Costa Blanca, waar natuur en creativiteit hand in hand gaan. Gelegen aan de rand van een uitgestrekt natuurgebied en op slechts een korte wandeling van de Middellandse Zee, biedt Casa Benissa de perfecte omgeving om te ontspannen, verbinden en geïnspireerd te raken.</p>
                         <p>Deze exclusieve locatie ligt op een ruim, vlak terrein en is geschikt voor groepen van 4 tot 30 personen. Of je nu een intensieve training plant, een team-building activiteit, een inspirerend business event, of een ontspannend wellness retreat, Casa Benissa heeft alles in huis om het een onvergetelijke ervaring te maken.</p>
                     </div>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <h3>4-30</h3>
-                            <p>Personen</p>
+                    <div class="about-image">
+                        <img src="images/Trainingslocatie-Spanje.jpg" alt="Trainingslocatie Spanje - Casa Benissa Costa Blanca" loading="lazy">
+                    </div>
+                </div>
+
+                
+                <div class="location-features">
+                    <div class="features-grid">
+                        <div class="feature">
+                            <h5>🏖️ Playa de la Fustera</h5>
+                            <p>Direct naast een natuurgebied en op loopafstand van het betoverende Playa de la Fustera. Dit prachtige zandstrand aan de Middellandse Zee is de perfecte plek om na een intensieve training te ontspannen.</p>
                         </div>
-                        <div class="stat">
-                            <h3>100%</h3>
-                            <p>Ontzorging</p>
+                        <div class="feature">
+                            <h5>🌿 Paseo Ecológico</h5>
+                            <p>Maak een meditatieve wandeling langs het strand of het Paseo Ecológico – een schitterend wandelpad langs de kust. Voor wie behoefte heeft aan beweging, is er de mogelijkheid om een yogasessie in de open lucht bij het strand te volgen.</p>
                         </div>
-                        <div class="stat">
-                            <h3>24/7</h3>
-                            <p>Support</p>
+                        <div class="feature">
+                            <h5>🏊 Zwembad & BBQ</h5>
+                            <p>Gebruik van alle faciliteiten, waaronder een zwembad, een ruime buitenkeuken met BBQ en pizzaoven, en een speciale massageruimte. Binnen is er voldoende ruimte en verwarming voor de koelere dagen.</p>
+                        </div>
+                        <div class="feature">
+                            <h5>👥 Groepen 4-30 Personen</h5>
+                            <p>Geschikt voor zowel kleine intieme trainingen als grotere groepen. Flexibele ruimtes die zich aanpassen aan jouw behoeften en groepsgrootte.</p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="diensten" class="services">
-            <div class="container">
-                <h2>Onze Diensten</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">🏠</div>
-                        <h3>Huur Trainingslocatie</h3>
-                        <p>Huur Casa Benissa voor trainingen, workshops, retraites of zakelijke evenementen. Keuze uit verschillende arrangementen afgestemd op jouw wensen.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">🧘</div>
-                        <h3>Trainingen & Workshops</h3>
-                        <p>NLP Practitioner, Familieopstellingen, Systemisch Coaching, Vrouwentraining, Wandelretraites en Yoga & Meditatie sessies.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">🌟</div>
-                        <h3>Volledige Ontzorging</h3>
-                        <p>Van vervoer vanaf het vliegveld tot accommodatie, catering en leuke activiteiten. We regelen het graag voor je.</p>
-                    </div>
                 </div>
             </div>
         </section>
 
         <section id="locatie" class="location">
             <div class="container">
-                <h2>Onze Locatie</h2>
+                <h2>Huur Trainingslocatie Spanje</h2>
                 <div class="location-content">
                     <div class="location-info">
-                        <h3>Waarom kiezen voor Casa Benissa?</h3>
-                        <div class="location-features">
-                            <div class="feature">
-                                <h4>🏖️ Playa de la Fustera</h4>
-                                <p>Direct naast een natuurgebied en op loopafstand van het betoverende Playa de la Fustera. Dit prachtige zandstrand aan de Middellandse Zee is de perfecte plek om na een intensieve training te ontspannen.</p>
+                        <h3>Flexibele Ontzorging voor Trainers</h3>
+                        <p class="location-intro">Casa Benissa is dé trainingslocatie in Spanje voor trainers die hun eigen evenementen willen organiseren. Wij bieden verschillende ontzorgingspakketten, zodat jij je kunt focussen op wat je het beste kunt: je training geven.</p>
+                        
+                        <div class="service-packages">
+                            <div class="package-card">
+                                <div class="package-icon">🏠</div>
+                                <h3>Alleen Locatie</h3>
+                                <ul class="package-features">
+                                    <li>Exclusief gebruik van Casa Benissa</li>
+                                    <li>Trainingsruimtes met uitzicht op zee</li>
+                                    <li>Zwembad en buitenfaciliteiten</li>
+                                    <li>BBQ en pizza oven</li>
+                                    <li>Massageruimte</li>
+                                    <li>Wifi en verwarming</li>
+                                </ul>
+                                <p class="package-note">Jij regelt zelf catering, accommodatie en activiteiten</p>
                             </div>
-                            <div class="feature">
-                                <h4>🌿 Paseo Ecológico</h4>
-                                <p>Maak een meditatieve wandeling langs het strand of het Paseo Ecológico – een schitterend wandelpad langs de kust. Voor wie behoefte heeft aan beweging, is er de mogelijkheid om een yogasessie in de open lucht bij het strand te volgen.</p>
+                            
+                            <div class="package-card featured">
+                                <div class="package-icon">🍽️</div>
+                                <h3>Locatie + Catering</h3>
+                                <ul class="package-features">
+                                    <li><strong>Alles uit het basispakket +</strong></li>
+                                    <li>Professionele catering</li>
+                                    <li>Ontbijt, lunch en diner</li>
+                                    <li>Koffie, thee en versnaperingen</li>
+                                    <li>Dieetwensen worden gehonoreerd</li>
+                                    <li>Lokale en verse ingrediënten</li>
+                                </ul>
+                                <p class="package-note">Wij zorgen voor de maaltijden, jij focust op je training</p>
                             </div>
-                            <div class="feature">
-                                <h4>🏊 Zwembad & BBQ</h4>
-                                <p>Gebruik van alle faciliteiten, waaronder een zwembad, een ruime buitenkeuken met BBQ en pizzaoven, en een speciale massageruimte. Binnen is er voldoende ruimte en verwarming voor de koelere dagen.</p>
+                            
+                            <div class="package-card">
+                                <div class="package-icon">🌟</div>
+                                <h3>Volledige Ontzorging</h3>
+                                <ul class="package-features">
+                                    <li><strong>Alles uit locatie + catering pakket +</strong></li>
+                                    <li>Accommodatie voor deelnemers</li>
+                                    <li>Vervoer vanaf het vliegveld</li>
+                                    <li>Activiteiten en excursies</li>
+                                    <li>Yogatrainers en masseuses</li>
+                                    <li>24/7 ondersteuning</li>
+                                </ul>
+                                <p class="package-note">Wij regelen alles, jij hoeft alleen maar te trainen</p>
+                            </div>
+                        </div>
+                        
+
+                        
+                        <div class="cta-section">
+                            <h3>Klaar om jouw droomtraining te realiseren?</h3>
+                            <p>Laat Casa Benissa de perfecte setting zijn voor jouw volgende training, workshop of retraite. Wij maken het je graag makkelijk met onze flexibele pakketten en persoonlijke service.</p>
+                            <div class="cta-buttons">
+                                <a href="offerte.html" class="cta-button-primary">Vraag Vrijblijvende Offerte</a>
+                                <a href="#contact" class="cta-button-secondary">Direct Contact</a>
                             </div>
                         </div>
                     </div>
@@ -129,46 +251,58 @@
             <div class="container">
                 <h2>Galerij</h2>
                 <div class="gallery-grid">
-                    <div class="gallery-item">
+                    <div class="gallery-item" onclick="openLightbox('images/Trainingslocatie-Spanje.jpg', 'Trainingslocatie', 'Onze prachtige trainingsruimte in Spanje')">
                         <img src="images/Trainingslocatie-Spanje.jpg" alt="Trainingslocatie Spanje" loading="lazy">
                         <div class="gallery-overlay">
                             <h3>Trainingslocatie</h3>
                             <p>Onze prachtige trainingsruimte in Spanje</p>
                         </div>
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" onclick="openLightbox('images/TrainingsRuimte-Kust-Spanje-1024x768.jpg', 'Uitzicht op Zee', 'Trainingsruimte met adembenemend uitzicht')">
                         <img src="images/TrainingsRuimte-Kust-Spanje-1024x768.jpg" alt="Trainingsruimte met uitzicht op zee" loading="lazy">
                         <div class="gallery-overlay">
                             <h3>Uitzicht op Zee</h3>
                             <p>Trainingsruimte met adembenemend uitzicht</p>
                         </div>
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" onclick="openLightbox('images/play-de-la-fustera-600x400.jpg', 'Playa de la Fustera', 'Het prachtige strand op loopafstand')">
                         <img src="images/play-de-la-fustera-600x400.jpg" alt="Playa de la Fustera strand" loading="lazy">
                         <div class="gallery-overlay">
                             <h3>Playa de la Fustera</h3>
                             <p>Het prachtige strand op loopafstand</p>
                         </div>
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" onclick="openLightbox('images/Casa-Benissa-avond-600x400.jpg', 'Avondsfeer', 'De magische sfeer van Casa Benissa')">
                         <img src="images/Casa-Benissa-avond-600x400.jpg" alt="Casa Benissa in de avond" loading="lazy">
                         <div class="gallery-overlay">
                             <h3>Avondsfeer</h3>
                             <p>De magische sfeer van Casa Benissa</p>
                         </div>
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" onclick="openLightbox('images/Ruime-bbq-en-pizza-oven-600x400.jpg', 'BBQ & Pizza Oven', 'Geniet van heerlijke maaltijden')">
                         <img src="images/Ruime-bbq-en-pizza-oven-600x400.jpg" alt="BBQ en pizza oven" loading="lazy">
                         <div class="gallery-overlay">
                             <h3>BBQ & Pizza Oven</h3>
                             <p>Geniet van heerlijke maaltijden</p>
                         </div>
                     </div>
-                    <div class="gallery-item">
+                    <div class="gallery-item" onclick="openLightbox('images/tapas-bij-zwembad-600x400.jpg', 'Tapas bij Zwembad', 'Ontspanning en culinaire genietingen')">
                         <img src="images/tapas-bij-zwembad-600x400.jpg" alt="Tapas bij het zwembad" loading="lazy">
                         <div class="gallery-overlay">
                             <h3>Tapas bij Zwembad</h3>
                             <p>Ontspanning en culinaire genietingen</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lightbox Overlay -->
+                <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+                    <div class="lightbox-content" onclick="event.stopPropagation()">
+                        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+                        <img id="lightbox-image" src="" alt="">
+                        <div class="lightbox-caption">
+                            <h3 id="lightbox-title"></h3>
+                            <p id="lightbox-description"></p>
                         </div>
                     </div>
                 </div>
@@ -232,6 +366,187 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
+    <script>
+        // Force favicon reload
+        document.addEventListener('DOMContentLoaded', function() {
+            // Verwijder alle bestaande favicon links
+            const existingFavicons = document.querySelectorAll('link[rel="icon"], link[rel="shortcut icon"], link[rel="apple-touch-icon"]');
+            existingFavicons.forEach(link => link.remove());
+            
+            // Voeg nieuwe favicon toe
+            const newFavicon = document.createElement('link');
+            newFavicon.rel = 'icon';
+            newFavicon.type = 'image/png';
+            newFavicon.href = 'favicon-cb.png?v=' + Date.now();
+            document.head.appendChild(newFavicon);
+            
+            // Voeg ook shortcut icon toe
+            const shortcutIcon = document.createElement('link');
+            shortcutIcon.rel = 'shortcut icon';
+            shortcutIcon.href = 'favicon-cb.png?v=' + Date.now();
+            document.head.appendChild(shortcutIcon);
+        });
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Casa Benissa",
+        "description": "Trainingslocatie Spanje huren - Perfecte locatie voor workshops, retraites en zakelijke evenementen aan de Costa Blanca",
+        "url": "https://casabenissa.nl",
+        "telephone": "+31 652686298",
+        "email": "info@casabenissa.nl",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Carrer l'Api 5",
+            "addressLocality": "Benissa",
+            "postalCode": "03720",
+            "addressRegion": "Alicante",
+            "addressCountry": "ES"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "38.7167",
+            "longitude": "0.0500"
+        },
+        "openingHours": "Mo-Su 00:00-23:59",
+        "priceRange": "€€",
+        "serviceType": "Trainingslocatie huren",
+        "areaServed": "Spanje, Costa Blanca",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Trainingslocatie Pakketten",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Alleen Locatie"
+                    },
+                    "price": "75",
+                    "priceCurrency": "EUR",
+                    "description": "Exclusief gebruik van Casa Benissa trainingslocatie"
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Locatie + Catering"
+                    },
+                    "price": "95",
+                    "priceCurrency": "EUR",
+                    "description": "Trainingslocatie met professionele catering"
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Volledige Ontzorging"
+                    },
+                    "price": "125",
+                    "priceCurrency": "EUR",
+                    "description": "Complete trainingslocatie met alle services"
+                }
+            ]
+        },
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Trainingsruimte",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Zwembad",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "BBQ",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Uitzicht op zee",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Parking",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "WiFi",
+                "value": true
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Airconditioning",
+                "value": true
+            }
+        ],
+        "serviceArea": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": "38.7167",
+                "longitude": "0.0500"
+            },
+            "geoRadius": "50000"
+        },
+        "review": {
+            "@type": "Review",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "Teamexpertise"
+            },
+            "reviewBody": "Uitstekende trainingslocatie met prachtig uitzicht en alle faciliteiten"
+        },
+        "image": [
+            "https://casabenissa.nl/images/Trainingslocatie-Spanje.jpg",
+            "https://casabenissa.nl/images/TrainingsRuimte-Kust-Spanje-1024x768.jpg",
+            "https://casabenissa.nl/images/Casa-Benissa-avond-600x400.jpg"
+        ]
+    }
+    </script>
+    
+    <!-- Lightbox JavaScript -->
+    <script>
+        function openLightbox(imageSrc, title, description) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxTitle = document.getElementById('lightbox-title');
+            const lightboxDescription = document.getElementById('lightbox-description');
+            
+            lightboxImage.src = imageSrc;
+            lightboxImage.alt = title;
+            lightboxTitle.textContent = title;
+            lightboxDescription.textContent = description;
+            
+            lightbox.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+        
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+        
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
 </body>
 </html> 

@@ -1,0 +1,40 @@
+name: Deploy to Website
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        
+    - name: Install dependencies
+      run: |
+        npm install -g lftp
+        
+    - name: Deploy to FTP
+      env:
+        FTP_HOST: ${{ secrets.FTP_HOST }}
+        FTP_USER: ${{ secrets.FTP_USER }}
+        FTP_PASS: ${{ secrets.FTP_PASS }}
+        FTP_PATH: ${{ secrets.FTP_PATH }}
+      run: |
+        lftp -c "
+          set ssl:verify-certificate no;
+          open -u $FTP_USER,$FTP_PASS $FTP_HOST;
+          mirror --reverse --delete --verbose ./ $FTP_PATH;
+          exit;
+        "
+        
+    - name: Deploy success
+      run: echo "Website successfully deployed!" 
